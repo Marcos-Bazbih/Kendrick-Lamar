@@ -1,0 +1,246 @@
+:root{
+    --navbarFontFamily: 'Lobster', cursive;
+    --headersFontFamily: 'Ruslan Display', cursive;
+    --pFontFamily: 'Indie Flower', cursive;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    width: 95%;
+    margin: auto;
+    background: linear-gradient(115deg, #797a7b 0%, #000000 40%);
+    background-attachment: fixed;
+}
+#backgroundImg{
+    z-index: -100;
+    width: 45%;
+    height:100%;
+    position: fixed;
+    right: 0;
+}
+header{
+    display: flex;
+}
+nav ul{
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 10px;
+}
+nav ul li{
+    font-family: var(--navbarFontFamily);
+    padding:5px 10px;
+    border-bottom: 2px solid grey;
+    border-top: 2px solid transparent;
+    list-style-type: none;
+    font-size: 26px;
+    font-weight:bold;
+    transition: 0.6s;
+}
+.activePage a{
+    color: goldenrod;
+}
+nav ul li a{
+    text-decoration: none;
+    color: firebrick;
+}
+nav ul li:hover{
+    border-top: 2px solid grey;
+}
+#orderLink{
+    color: silver ;
+}
+.pageMainContainer{
+    width: 55%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 3vh;
+    margin: 2% 0%;
+}
+.albumCover{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    height: 50%;
+}
+.albumCover img{
+    width: 75%;
+    height: 75%;
+    transition: 1s;
+    border-radius: 1%;
+}
+.albumCover img:hover{
+    filter: brightness(150%);
+}
+.albumSongs{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 3vh;
+    margin: 2% 0%;
+}
+.albumSongs h1{
+    font-family: var(--headersFontFamily);
+    text-decoration: underline;
+    font-size: 60px;
+    margin: 0;
+    color: silver;
+    animation-name: trackListTitle;
+    animation-duration: 2s;
+    animation-iteration-count:infinite;
+    animation-direction: alternate;
+}
+@keyframes trackListTitle {
+    0% {}
+    100% {color: rgba(192, 192, 192, 0.13);}
+}
+.albumSongs ol{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.albumSongs ol li{
+    font-size:xx-large;
+    font-weight: bold;
+    font-family: var(--pFontFamily);
+    color: silver;
+}
+.AlbumAbout{
+    width: 100%;
+    margin: 5% 0%;
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    background: silver;
+}
+.AlbumAbout h2{
+    font-family: var(--headersFontFamily);
+    color: black;
+    text-decoration: underline;
+    font-size: 45px;
+    margin: 0;
+}
+.AlbumAbout p{
+    font-size:x-large;
+    font-weight: bold;
+    font-family: var(--pFontFamily);
+}
+.AlbumAbout p:hover>span{
+    background: black;
+    color:silver;
+}
+span{
+    transition: 0.5s;
+}
+.AlbumAbout span a{
+    text-decoration: none;
+    background: black;
+    color:silver;
+}
+#orderForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 65vh;
+}
+form{
+    width: 50%;
+    height: 100%;
+    background: silver;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#orderForm h2{
+    font-family: var(--headersFontFamily);
+    color: silver;
+    text-decoration: underline;
+    font-size: 45px;
+    margin: 0;
+}
+#orderForm form label{
+    font-size:x-large;
+    font-weight: bold;
+    text-decoration: underline;
+    font-family: var(--navbarFontFamily);
+}
+input, select{
+    width: 50%;
+    padding: 5px;
+}
+button{
+    padding: 10px 20px;
+    font-size: 24px;
+    text-decoration: underline;
+    font-family: var(--navbarFontFamily);
+    background: black;
+    color: silver;
+}
+footer {
+    text-align: center;
+    color: silver;
+}
+@media screen and (max-width:768px) {
+    body{
+        background: black;
+    }
+    #backgroundImg{
+        opacity: 0.2;
+        width: 100%;
+    }
+    nav, ul{
+        height:50%;
+        position: fixed;
+        right: 0;
+        width: 25%;
+        flex-direction: column;
+    }
+    header nav ul li{
+        font-size: 20px;
+    }
+    header nav ul li:hover{
+        border-top:transparent;
+    }
+    .albumCover img{
+        display: none;
+    }
+    .pageMainContainer .albumSongs ol{
+        align-items: flex-start;
+        height: 50vh;
+        overflow: auto;
+    }
+    .pageMainContainer .AlbumAbout{
+        height: 100vh;
+        overflow: auto;
+    }
+    .albumSongs h1, .AlbumAbout h2, #orderForm h2{
+        font-size: 40px;
+    }
+    #orderForm{
+        margin-bottom: 20%;
+        width:60%;
+    }
+    #orderForm form{
+        width: 100%;
+    }
+    button{
+        padding: 0;
+    }
+}
+@media screen and (max-width:425px) {
+    #orderForm{
+        margin-bottom: 50%;
+    }
+}

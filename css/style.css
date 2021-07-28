@@ -1,0 +1,131 @@
+:root{
+    --navbarFontFamily: 'Lobster', cursive;
+    --headersFontFamily: 'Ruslan Display', cursive;
+    --pFontFamily: 'Indie Flower', cursive;
+}
+body{
+    width: 95%;
+    margin: auto;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 50%, rgb(116, 116, 116) 85%);
+}
+#backgroundImg{
+    z-index: -100;
+    width: 40%;
+    height: 150%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+header{
+    display: flex;
+    justify-content: flex-end;
+}
+nav ul{
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 10px;
+}
+nav ul li{
+    font-family: var(--navbarFontFamily);
+    padding:5px 10px;
+    border-bottom: 2px solid black;
+    border-top: 2px solid transparent;
+    list-style-type: none;
+    font-size: 28px;
+    font-weight:bold;
+    transition: 0.6s;
+}
+.activePage a{
+    color: goldenrod;
+}
+nav ul li a{
+    text-decoration: none;
+    color: firebrick;
+}
+nav ul li:hover{
+    border-top: 2px solid black;
+}
+main{
+    display: flex;
+    justify-content: flex-end;
+}
+.homePageContainer{
+    display: flex;
+    width: 60%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.homePageContainer h1{
+    font-family: var(--headersFontFamily);
+    text-decoration: underline;
+    font-size: 60px;
+    margin:5% 0% 2%;
+    animation-name: homePageTitle;
+    animation-duration: 2s;
+    animation-iteration-count:infinite;
+    animation-direction: alternate;
+}
+@keyframes homePageTitle {
+0% {}
+100% {color: goldenrod}
+}
+.homePageContainer h2{
+    font-family: var(--headersFontFamily);
+    color: goldenrod;
+    text-decoration: underline;
+    font-size: 45px;
+    margin:5% 0% 2%;
+}
+.homePageContainer p{
+    font-size: 25px;
+    font-weight: bold;
+    font-family: var(--pFontFamily);
+}
+#aboutInfo:hover>span, #EarlyLifeInfo:hover>span, #awardsInfo:hover>span{
+    background: goldenrod;
+}
+span{
+    transition: 0.5s;
+}
+.homePageContainer img{
+    width: 50%;
+}
+footer{
+    text-align: center;
+}
+@media screen and (max-width:768px) {
+    body{
+        background: none;
+    }
+    body #backgroundImg{
+        width: 100%;
+        filter:opacity(0.3)
+    }
+    nav, ul{
+        height:50%;
+        position: fixed;
+        width: 25%;
+        flex-direction: column;
+    }
+    header nav ul li{
+        font-size: 20px;
+    }
+    header nav ul li:hover{
+        border-top:transparent;
+    }
+    body main{
+        justify-content: flex-start;
+    }
+    .homePageContainer p{
+        height: 100vh;
+        overflow: auto;
+    }
+    .homePageContainer h1, .homePageContainer h2{
+        font-size: 30px;
+    }
+    .homePageContainer img{
+        width: 100%;
+    }
+}

@@ -63,13 +63,13 @@ main{
     font-size: 60px;
     margin:5% 0% 2%;
     animation-name: homePageTitle;
-    animation-duration: 2s;
-    animation-iteration-count:infinite;
-    animation-direction: alternate;
+    animation-duration: 5s;
+    animation-iteration-count:1;
+    animation-fill-mode: forwards;
 }
 @keyframes homePageTitle {
-0% {}
-100% {color: goldenrod}
+    0% {filter: blur(20px);}
+    100% {color: goldenrod;}
 }
 .homePageContainer h2{
     font-family: var(--headersFontFamily);

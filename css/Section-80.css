@@ -190,6 +190,9 @@ footer{
     }
 }
 @media screen and (max-width:768px) {
+    #backgroundImg{
+        width: 100%;
+    }
     nav, ul{
         height:50%;
         position: fixed;

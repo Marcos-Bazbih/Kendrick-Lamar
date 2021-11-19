@@ -42,7 +42,7 @@ nav ul li{
     list-style-type: none;
     font-size: 28px;
     font-weight:bold;
-    transition: 0.6s;
+    transition: 0.25s;
 }
 .activePage a{
     color: goldenrod;
@@ -80,7 +80,7 @@ main{
 .trackList img{
     width: 50%;
     border-radius: 5%;
-    transition: 1s;
+    transition: 0.5s;
 }
 .trackList img:hover{
     filter: brightness(150%);
@@ -131,7 +131,7 @@ main{
     color: black;
 }
 span{
-    transition: 0.5s;
+    transition: 0.25s;
 }
 #orderForm{
     display: flex;
@@ -169,6 +169,7 @@ input, select{
     padding: 5px;
 }
 button{
+    cursor: pointer;
     padding: 10px 20px;
     font-size: 24px;
     text-decoration: underline;
